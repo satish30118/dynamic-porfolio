@@ -7,7 +7,7 @@ const router = express.Router();
 
 //ROUTING FOR CONTACT FORM
 router.post('/add-contact-form', addNewForm);
-router.delete('/delete-contact-form',adminVerification, deleteForm);
+router.delete('/delete-contact-form/:id',adminVerification, deleteForm);
 router.get('/get-all-contact-form', adminVerification, getAllFormData);
 
 //ROUTING FOR CONTACT LINK

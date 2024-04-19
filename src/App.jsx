@@ -13,6 +13,7 @@ import Testimonial from './adminPanel/components/Testimonial';
 import Aboutme from './adminPanel/components/Aboutme';
 import Skill from './adminPanel/components/Skill';
 import { AuthProvider } from './contextAPI/authContext';
+import ContactForm from './adminPanel/components/ContactForm';
 
 function App() {
     return (
@@ -32,6 +33,8 @@ function App() {
                             <Route path="education" element={<Education />} />
                             <Route path="contact" element={<Contact />} />
                             <Route path="testimonial" element={<Testimonial />} />
+                            <Route path="contact-form" element={<ContactForm />} />
+
                         </Route>
                     </Routes>
                 </Router>

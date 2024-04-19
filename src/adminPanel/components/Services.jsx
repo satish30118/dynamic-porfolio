@@ -111,7 +111,13 @@ const Services = () => {
         <>
             <div className="skill-page">
                 <div className="add-new-skill center">
-                    <button className="center" onClick={() => setPopUp(true)}>
+                    <button
+                        className="center"
+                        onClick={() => {
+                            setPopUp(true);
+                            setUpdateForm(false);
+                        }}
+                    >
                         <i className="fa-solid fa-plus"></i>
                     </button>
                 </div>
@@ -154,7 +160,7 @@ const Services = () => {
             {/* POPUP SECTION */}
             <div className="overlay" style={{ display: `${showPopUp || deletePopUp ? 'block' : 'none'}` }}></div>
             <div className="add-new-skill-popup popup-position" style={{ display: `${showPopUp ? 'block' : 'none'}` }}>
-                <form className="login-form" style={{ height: 'auto' }}>
+                <form className="login-form" style={{ height: 'auto', margin: '40px auto' }}>
                     <h5 className="heading">{updateForm ? 'Update Service Data' : 'Add Service'}</h5>
                     <div>
                         {/* <label htmlFor="title">Enter Skill Name</label> */}
@@ -184,14 +190,16 @@ const Services = () => {
             </div>
 
             {/* DELETE POPUP */}
-            <div className="popup-position delete-popup" style={{ display: `${deletePopUp ? 'block' : 'none'}` }}>
-                <h3>You are sure to delete ?</h3>
-                <button className="btn" onClick={deleteService}>
-                    Delete
-                </button>
-                <button className="btn cancel-btn" onClick={() => setDeletePopUp(false)}>
-                    Cancel
-                </button>
+            <div className="popup-position">
+                <div className="delete-popup" style={{ display: `${deletePopUp ? 'block' : 'none'}` }}>
+                    <h3>You are sure to delete ?</h3>
+                    <button className="btn" onClick={deleteService}>
+                        Delete
+                    </button>
+                    <button className="btn cancel-btn" onClick={() => setDeletePopUp(false)}>
+                        Cancel
+                    </button>
+                </div>
             </div>
         </>
     );

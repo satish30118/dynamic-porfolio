@@ -3,7 +3,8 @@ const testimonialModel = require('../models/testimonialModel');
 /* ------------- TESTIMONIAL  SECTION ------------- */
 const addNewTestimonial = async (req, res) => {
     try {
-        const { name, image, position, message } = req.body;
+        const { name, position, message } = req.body;
+        const image = req.file.path;
 
         //CREATING NEW PROJECT
         const newtestimonial = await new testimonialModel({
@@ -34,6 +35,7 @@ const getAllTestimonialData = async (req, res) => {
     try {
         const allTestimonial = await testimonialModel.find({});
         res.status(200).send({
+            success:true,
             message: 'All Testimonial details',
             allTestimonial,
         });
@@ -49,12 +51,17 @@ const getAllTestimonialData = async (req, res) => {
 /* Testimonial Update */
 const updateTestimonialData = async (req, res) => {
     try {
-        const { name, image, position, message } = req.body;
+        const { name, position, message } = req.body;
+        let image;
+        if (req.file) {
+            image = req.file.path;
+        }
         const { id } = req.params;
-        const updatedTestimonialData = await testimonialModel.findByIdAndUpdate(id, { heading, title, image, techStack, description, link }, { new: true });
+        const updatedTestimonialData = await testimonialModel.findByIdAndUpdate(id, { name,image, position, message }, { new: true });
 
         if (updatedTestimonialData) {
             res.status(200).send({
+                success:true,
                 message: ' Updated Successfully',
                 updatedTestimonialData,
             });
@@ -74,6 +81,7 @@ const deleteTestimonial = async (req, res) => {
         const { id } = req.params;
         const testimonialDeleted = await testimonialModel.findByIdAndDelete({ _id: id });
         res.status(200).send({
+            success:true,
             message: 'Deleted Successfully!!',
             testimonialDeleted,
         });

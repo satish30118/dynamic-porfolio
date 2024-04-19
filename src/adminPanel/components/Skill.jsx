@@ -116,7 +116,7 @@ const Skill = () => {
         <>
             <div className="skill-page">
                 <div className="add-new-skill center">
-                    <button className="center" onClick={() => setPopUp(true)}>
+                    <button className="center" onClick={() =>{ setPopUp(true); setUpdateForm(false);}}>
                         <i className="fa-solid fa-plus"></i>
                     </button>
                 </div>
@@ -138,7 +138,7 @@ const Skill = () => {
                                     onClick={() => {
                                         setLevel(s.level);
                                         setTitle(s.title);
-                                        setSelectedId(s._id)
+                                        setSelectedId(s._id);
                                         setPopUp(true);
                                         setUpdateForm(true);
                                     }}
@@ -158,52 +158,54 @@ const Skill = () => {
                         </div>
                     ))}
                 </div>
-
             </div>
-            
-                {/* POPUP SECTION */}
-                <div className="overlay" style={{ display: `${showPopUp || deletePopUp ? 'block' : 'none'}` }}></div>
-                <div className="add-new-skill-popup popup-position" style={{ display: `${showPopUp ? 'block' : 'none'}` }}>
-                    <form className="login-form" style={{ height: 'auto' }}>
-                        <h5 className="heading">{updateForm ? "Update Skill Data" : "Add New Skill" }</h5>
-                        <div>
-                            {/* <label htmlFor="title">Enter Skill Name</label> */}
-                            <input type="text" required placeholder="Enter Skill Name" value={title} onChange={(e) => setTitle(e.target.value)} />
-                        </div>
-                        <div>
-                            {/* <label htmlFor="level">Enter Your Level</label> */}
-                            <input
-                                type="text"
-                                required
-                                id="level"
-                                placeholder="Enter Your Level"
-                                value={level}
-                                onChange={(e) => setLevel(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="title" style={{ fontWeight: '600' }}>
-                                Upload Skill Logo
-                            </label>
-                            <input
-                                type="file"
-                                style={{ color: 'white', border: '2px solid lightgray' }}
-                                onChange={(e) => setImage(e.target.files[0])}
-                            />
-                        </div>
-                        <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                            <button className="btn" onClick={updateForm ?updateSkill : addSkill}>
-                                {updateForm ? 'Update' : 'Add Skill'}
-                            </button>
-                            <button className="btn cancel-btn" onClick={(e) =>{e.preventDefault(); setPopUp(false)}}>
-                                Cancel
-                            </button>
-                        </div>
-                    </form>
-                </div>
 
-                {/* DELETE POPUP */}
-                <div className="popup-position delete-popup" style={{ display: `${deletePopUp ? 'block' : 'none'}` }}>
+            {/* POPUP SECTION */}
+            <div className="overlay" style={{ display: `${showPopUp || deletePopUp ? 'block' : 'none'}` }}></div>
+            <div className="add-new-skill-popup popup-position center" style={{ display: `${showPopUp ? 'block' : 'none'}` }}>
+                <form className="login-form" style={{ height: 'auto', margin: '40px auto' }}>
+                    <h5 className="heading">{updateForm ? 'Update Skill Data' : 'Add New Skill'}</h5>
+                    <div>
+                        {/* <label htmlFor="title">Enter Skill Name</label> */}
+                        <input type="text" required placeholder="Enter Skill Name" value={title} onChange={(e) => setTitle(e.target.value)} />
+                    </div>
+                    <div>
+                        {/* <label htmlFor="level">Enter Your Level</label> */}
+                        <input
+                            type="text"
+                            required
+                            id="level"
+                            placeholder="Enter Your Level"
+                            value={level}
+                            onChange={(e) => setLevel(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="title" style={{ fontWeight: '600' }}>
+                            Upload Skill Logo
+                        </label>
+                        <input type="file" style={{ color: 'white', border: '2px solid lightgray' }} onChange={(e) => setImage(e.target.files[0])} />
+                    </div>
+                    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                        <button className="btn" onClick={updateForm ? updateSkill : addSkill}>
+                            {updateForm ? 'Update' : 'Add Skill'}
+                        </button>
+                        <button
+                            className="btn cancel-btn"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setPopUp(false);
+                            }}
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            {/* DELETE POPUP */}
+            <div className="popup-position">
+                <div className="delete-popup" style={{ display: `${deletePopUp ? 'block' : 'none'}` }}>
                     <h3>You are sure to delete ?</h3>
                     <button className="btn" onClick={deleteSkill}>
                         Delete
@@ -212,6 +214,7 @@ const Skill = () => {
                         Cancel
                     </button>
                 </div>
+            </div>
         </>
     );
 };

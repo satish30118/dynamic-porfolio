@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TestimonialSlider from './TestimonialSlider';
+import axios from 'axios';
 
 const Testimonials = () => {
-  const testimonials = [
-    { author: 'John Doe', position:"CEO, XYZ", text: 'Amazing service, I highly recommend it! Great experience from start to finish.I couldn\'t be happier with the results.Amazing service' },
-    { author: 'Jane Smith',position:"CEO, XYZ", text: 'I couldn\'t be happier with the results.Amazing service, I highly recommend it! Great experience from start to finish.' },
-    { author: 'Bob Johnson',position:"CEO, XYZ", text: 'Great experience from start to finish.Amazing service, I highly recommend it!I couldn\'t be happier with the results.Amazing service' }
-  ];
+  const [allTestimonial, setAllTestimonial] = useState([]);
+
+  const getAllTesti = async () => {
+    try {
+        const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/testimonial/get-all-testimonial`);
+        setAllTestimonial(data?.allTestimonial);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+useEffect(() => {
+    getAllTesti();
+}, []);
 
   return (
     <div className="testimonial-section">
       <h1 className='heading'>Testimonials</h1>
-      <TestimonialSlider testimonials={testimonials} intervalTime={3000} />
+      <TestimonialSlider testimonials={allTestimonial} intervalTime={3000} />
     </div>
   );
 };

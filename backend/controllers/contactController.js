@@ -7,8 +7,7 @@ const addNewForm = async (req, res) => {
 
         //CREATING NEW
         const newForm = await new contactFormModel({
-            title,
-            image,
+            name, email,message
         }).save();
 
         if (newForm) {
@@ -32,6 +31,7 @@ const getAllFormData = async (req, res) => {
     try {
         const allForm = await contactFormModel.find({});
         res.status(200).send({
+            success:true,
             message: 'All form details',
             allForm,
         });
@@ -50,6 +50,7 @@ const deleteForm = async (req, res) => {
         const { id } = req.params;
         const formDeleted = await contactFormModel.findByIdAndDelete({ _id: id });
         res.status(200).send({
+            success:true,
             message: 'Deleted Successfully!!',
             formDeleted,
         });

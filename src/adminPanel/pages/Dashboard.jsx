@@ -22,6 +22,8 @@ const Dashboard = () => {
                 <NavLink to={"/admin/dashboard/experiences"}>Experiences</NavLink>
                 <NavLink to={"/admin/dashboard/education"}>Education</NavLink>
                 <NavLink to={"/admin/dashboard/contact"}>My Contact </NavLink>
+                <NavLink to={"/admin/dashboard/contact-form"}>Contact Form</NavLink>
+
                 <NavLink to={"/admin/dashboard/testimonial"}>Testimonial</NavLink>
             </div>
             <div className="dashboard-content">

@@ -17,12 +17,12 @@ const TestimonialSlider = ({ testimonials, intervalTime }) => {
                 <div key={index} className={index === currentSlide ? 'slide active' : 'slide'}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <img
-                            src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1   "
-                            alt=""
+                            src={`http://localhost:8000/${testimonial?.image}`}
+                            alt="member image"
                             style={{ width: '100px', height: '100px', borderRadius: '50%' }}
                         />
                         <div style={{ marginLeft: '15px' }}>
-                            <h2 style={{ color: '#CC5500' }}>{testimonial.author}</h2>
+                            <h2 style={{ color: '#CC5500' }}>{testimonial.name}</h2>
                             <h3 style={{ color: 'gold' }}>{testimonial.position}</h3>
                         </div>
                     </div>
