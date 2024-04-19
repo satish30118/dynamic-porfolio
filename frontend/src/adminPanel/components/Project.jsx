@@ -36,7 +36,7 @@ const Project = () => {
 
             setAnimation(true);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/project/add-project`, projectData);
+            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/project/add-project`, projectData);
 
             setAnimation(false);
 
