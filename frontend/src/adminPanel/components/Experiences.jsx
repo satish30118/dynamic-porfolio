@@ -101,7 +101,12 @@ const Experiences = () => {
 
             if (data?.success) {
                 toast.success('Service Updated Successfully!');
-                setData({});
+                setData({startDate:"",
+                  endDate:"",
+                  jobPosition:"",
+                  companyName:"",
+                  description:"",
+                  link:"",});
                 getAllExperience();
                 setPopUp(false);
                 return;

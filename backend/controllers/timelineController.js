@@ -131,7 +131,7 @@ const addNewExperience = async (req, res) => {
 /* GET ALL Experiences DETAILS */
 const getAllExperienceData = async (req, res) => {
   try {
-    const allExperience = await experienceModel.find({}).sort({createdAt:1});
+    const allExperience = await experienceModel.find({}).sort({createdAt:-1});
     res.status(200).send({
       message: "All Experiences details",
       allExperience,
