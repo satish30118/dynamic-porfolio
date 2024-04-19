@@ -42,21 +42,23 @@ const ContactForm = () => {
     return (
         <>
             <div className="contact-form">
+                <h2 className="heading">See All Contact Form Filled</h2>
                 <div className="skill-cards">
                     {allForm.map((s) => (
-                        <div className="skill-card" key={s._id} style={{ height: '330px', color: 'lightgray',}}>
+                        <div className="skill-card" key={s._id} style={{ height: 'auto', color: 'lightgray', width: '340px' }}>
                             <div className="card-details">
                                 <p style={{ color: '#CC5500' }}>Name - {s.name}</p>
-                                <p style={{ color: 'gold' }}>Name - {s.email}</p>
-                                <p style={{ color: 'green' }}>Name - {s.message}</p>
+                                <p style={{ color: 'gold' }}>Email- {s.email}</p>
+                                <p style={{ color: 'green' }}>Querry - {s.message}</p>
                             </div>
-                            <div className="manage-btn">
+                            <div className="manage-btn" style={{marginTop:"20px"}}>
                                 <button
-                                    className="btn delete-btn"
+                                    className="btn"
                                     onClick={() => {
                                         setDeletePopUp(true);
                                         setSelectedId(s._id);
                                     }}
+                                    style={{background:"brown", width:"150px"}}
                                 >
                                     Delete
                                 </button>

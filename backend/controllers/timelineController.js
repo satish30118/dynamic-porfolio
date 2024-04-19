@@ -35,7 +35,7 @@ const addNewEducation = async (req, res) => {
 /* GET ALL EDUCATION DETAILS */
 const getAllEducationData = async (req, res) => {
   try {
-    const allEducation = await educationModel.find({});
+    const allEducation = await educationModel.find({}).sort({createdAt:-1});
     res.status(200).send({
       success: true,
       message: "All Education details",

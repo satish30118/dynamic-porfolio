@@ -7,7 +7,7 @@ const Experiences = () => {
     const [animation, setAnimation] = useState(false);
     const [deletePopUp, setDeletePopUp] = useState(false);
     const [updateForm, setUpdateForm] = useState(false);
-    const [allEducation, setAllEducation] = useState([]);
+    const [allExperience, setAllExperience] = useState([]);
     const [active, setActive] = useState({});
     const [formdata, setData] = useState({});
 

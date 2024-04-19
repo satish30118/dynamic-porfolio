@@ -2,11 +2,10 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className="contact-page">
-            <form className="login-form" style={{ height: 'auto' }}>
+        <div className="contact-page center">
+            {/* <form className="login-form" style={{ height: 'auto' }}>
                 <h5 className="heading">{updateForm ? 'Update Service Data' : 'Add Service'}</h5>
                 <div>
-                    {/* <label htmlFor="title">Enter Skill Name</label> */}
                     <input type="text" required placeholder="Enter Title" value={title} onChange={(e) => setTitle(e.target.value)} />
                 </div>
                 <div>
@@ -29,7 +28,9 @@ const Contact = () => {
                         Cancel
                     </button>
                 </div>
-            </form>
+            </form> */}
+
+            <h2 className="heading">Upcoming...</h2>
         </div>
     );
 };
