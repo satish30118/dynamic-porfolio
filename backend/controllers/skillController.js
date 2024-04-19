@@ -3,7 +3,12 @@ const skillModel = require('../models/skillModel');
 /* ------------- SKILL SECTION ------------- */
 const addNewSkill = async (req, res) => {
     try {
-        const { title, image, level } = req.body;
+        // console.log(req.body);
+        // console.log(req.file);
+
+        const { title, level } = req.body;
+        const image = req.file.path;
+        // console.log(image)
 
         //CREATING NEW PROJECT
         const newSkill = await new skillModel({
@@ -48,16 +53,21 @@ const getAllSkillData = async (req, res) => {
 /* Skill Update */
 const updateSkillData = async (req, res) => {
     try {
-        const { title, image, level } = req.body;
+        const { title, level } = req.body;
+        let image;
+        if (req.file) {
+            image = req.file.path;
+        }else{
+
+        }
+
+        console.log(image);
         const { id } = req.params;
-        const updatedSkillData = await skillModel.findByIdAndUpdate(
-            id,
-            {title, image, level },
-            { new: true }
-        );
+        const updatedSkillData = await skillModel.findByIdAndUpdate(id, { title, image, level }, { new: true });
 
         if (updatedSkillData) {
             res.status(200).send({
+                success:true,
                 message: ' Updated Successfully',
                 updatedSkillData,
             });
@@ -77,6 +87,7 @@ const deleteSkill = async (req, res) => {
         const { id } = req.params;
         const skillDeleted = await skillModel.findByIdAndDelete({ _id: id });
         res.status(200).send({
+            success:true,
             message: 'Deleted Successfully!!',
             skillDeleted,
         });
@@ -93,5 +104,5 @@ module.exports = {
     addNewSkill,
     getAllSkillData,
     updateSkillData,
-    deleteSkill
+    deleteSkill,
 };

@@ -13,7 +13,7 @@ router.put('/update-user/:id', adminVerification, updateUser);
 
 //PROTECTED ROUTE FOR USER
 router.route('/admin-auth').get(adminVerification, (req, res) => {
-    res.status(200).send({ ok: true });
+    res.status(200).send({ success: true });
 });
 
 module.exports = router;

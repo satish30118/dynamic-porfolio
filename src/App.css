@@ -7,6 +7,7 @@
     border: 3px solid rgb(209, 213, 213);
     border-radius: 7px;
     font-weight: 600;
+    color: white;
     text-transform: uppercase;
 }
 
@@ -40,6 +41,7 @@
     position: sticky;
     background: #1c2a1c;
     top: 0;
+    z-index: 300000;
 }
 
 .nav-list {

@@ -1,0 +1,237 @@
+/* Utility */
+.bg {
+    background-color: rgb(12, 40, 40);
+}
+
+.form-bg {
+    background-color: rgb(1, 40, 55);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.update-btn {
+    padding: 4px 9px;
+    background-color: darkgreen;
+    margin: 20px 9px;
+}
+
+.delete-btn {
+    padding: 4px 9px;
+    background-color: darkred;
+}
+
+.cancel-btn {
+    background-color: brown;
+    margin-left: 20px;
+}
+
+.popup-position {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.delete-popup {
+    background-color: rgb(1, 40, 55);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 6px;
+
+    h3 {
+        color: red;
+        font-size: 22px;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+}
+
+/* ---------- UTILITY ------------ */
+
+/* LOGIN SECTION */
+.login-page {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(12, 40, 40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    width: 310px;
+    height: 340px;
+    padding: 20px;
+    background-color: rgb(1, 40, 55);
+    border: 1.2px solid lightgray;
+    border-radius: 6px;
+}
+
+.login-heading {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+}
+
+.login-form div {
+    margin: 10px 0;
+}
+
+.login-form input {
+    width: 100%;
+    border: none;
+    padding: 7px 20px;
+    outline: none;
+    font-weight: 570;
+    border-radius: 6px;
+    margin: 7px 0;
+}
+
+.login-form label {
+    width: 100%;
+    font-size: 18px;
+    color: white;
+}
+
+.login-btn {
+    width: 100%;
+    font-size: 20px;
+    height: 38px;
+    padding-bottom: 4px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+    outline: non;
+    margin-top: 15px;
+    font-weight: 600;
+
+}
+
+.login-btn:hover {
+    background-color: rgb(7, 91, 91);
+    color: white;
+}
+
+/* DASHBOARD SECTION */
+
+.dashboard-page {
+    display: flex;
+    background-color: rgb(12, 40, 40);
+    width: 100%;
+    height: 100vh;
+}
+
+.dashboard-menu {
+    width: 320px;
+    overflow: auto;
+    background-color: rgb(1, 40, 55);
+    height: 100%;
+    border-right: 3px solid white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.dashboard-menu a {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 20px;
+    margin: 1px 0;
+    font-weight: 670;
+    text-transform: uppercase;
+    /* text-align: center; */
+    color: lightgray;
+    /* background-color: brown; */
+}
+
+.dashboard-menu a:hover {
+    background-color: rgb(9, 9, 31);
+}
+
+.dashboard-menu a.active {
+    background-color: rgb(9, 9, 31);
+    color: white;
+    border: 1px solid white;
+}
+
+.dashboard-menu img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+    margin-top: 0;
+}
+
+.dashboard-menu div {
+    border-bottom: 1px solid white;
+}
+
+.dashboard-content {
+    width: 80vw;
+    overflow: auto;
+}
+
+/* SKILL SECTION */
+.skill-page {
+    padding: 20px;
+    position: relative;
+}
+
+.add-new-skill {
+    border: 1px solid gold;
+    border-radius: 8px;
+    height: 200px;
+    width: 95%;
+    margin: 20px auto;
+    color: white;
+}
+
+.add-new-skill button {
+    font-size: 60px;
+    font-weight: 700;
+    background-color: gray;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+/* ABOUT SECTION */
+
+.about-page {
+    padding: 30px;
+
+
+}
+
+.profile-form {
+    width: 80%;
+    height: auto;
+    textarea{
+        width: 100%;
+        height: 200px;
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        font-weight: 560;
+    }
+    .profile-btn{
+        /* width: 100%; */
+        margin-top: 30px;
+        background-color: rgb(5, 5, 59);
+    }
+}

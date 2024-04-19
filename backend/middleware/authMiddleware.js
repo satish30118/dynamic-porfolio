@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const userModel = require("../models/userModel");
 
 const adminVerification = async (req, res, next) => {
   const KEY = process.env.JWT_SECRET_KEY;
