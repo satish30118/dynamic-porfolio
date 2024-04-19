@@ -34,6 +34,7 @@ const Login = () => {
                     user: data?.userDetails,
                     token: data?.token,
                 });
+                // console.log(auth)
                 localStorage.setItem('userInfo', JSON.stringify(data));
                 navigate('/admin/dashboard');
                 return;

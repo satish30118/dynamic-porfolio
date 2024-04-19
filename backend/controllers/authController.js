@@ -48,6 +48,7 @@ const registerController = async (req, res) => {
                     _id: newUser._id,
                     name: newUser.name,
                     email: newUser.email,
+                    image: newUser.image,
                 },
                 token: token,
             });
@@ -96,7 +97,7 @@ const loginController = async (req, res) => {
 
         //GENRATING TOKEN
         const KEY = process.env.JWT_SECRET_KEY;
-        const token = await jwt.sign({ _id: user._id }, KEY, { expiresIn: '10d' });
+        const token = jwt.sign({ _id: user._id }, KEY, { expiresIn: '10d' });
 
         res.status(201).send({
             success: true,
@@ -105,6 +106,7 @@ const loginController = async (req, res) => {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
+                image: user.image,
             },
             token: token,
         });
@@ -165,6 +167,7 @@ const getAllUser = async (req, res) => {
     try {
         const allUser = await userModel.find({}, { projection: { password: 0 } });
         res.status(200).send({
+            success: true,
             message: 'All User details',
             allUser,
         });
@@ -180,7 +183,12 @@ const getAllUser = async (req, res) => {
 /* User Update*/
 const updateUser = async (req, res) => {
     try {
-        const { name, image, occupation, description, resumeLink, bio } = req.body;
+        const { name, occupation, description, resumeLink, bio } = req.body;
+        let image;
+        if (req.file) {
+            image = req.file.path;
+        }
+        console.log(req.file);
         const { id } = req.params;
         const updatedUser = await userModel.findByIdAndUpdate(
             id,
@@ -191,6 +199,7 @@ const updateUser = async (req, res) => {
 
         if (updatedUser) {
             res.status(200).send({
+                success: true,
                 message: ' updated Successfully',
                 updatedUser,
             });

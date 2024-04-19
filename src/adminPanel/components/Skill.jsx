@@ -159,11 +159,13 @@ const Skill = () => {
                     ))}
                 </div>
 
+            </div>
+            
                 {/* POPUP SECTION */}
                 <div className="overlay" style={{ display: `${showPopUp || deletePopUp ? 'block' : 'none'}` }}></div>
                 <div className="add-new-skill-popup popup-position" style={{ display: `${showPopUp ? 'block' : 'none'}` }}>
                     <form className="login-form" style={{ height: 'auto' }}>
-                        <h5 className="heading">Add New Skill</h5>
+                        <h5 className="heading">{updateForm ? "Update Skill Data" : "Add New Skill" }</h5>
                         <div>
                             {/* <label htmlFor="title">Enter Skill Name</label> */}
                             <input type="text" required placeholder="Enter Skill Name" value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -210,7 +212,6 @@ const Skill = () => {
                         Cancel
                     </button>
                 </div>
-            </div>
         </>
     );
 };

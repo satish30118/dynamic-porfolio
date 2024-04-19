@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { useAuth } from '../../contextAPI/authContext';
 
 const Dashboard = () => {
+    const [auth,] =useAuth();
     return (
         <div className="dashboard-page">
             <div className="dashboard-menu">
                 <h2 className='heading'>Admin</h2>
                 <div>
                     <img
-                        src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1   "
+                        src={`http://localhost:8000/${auth?.user?.image}`}
                         alt=""
                     />
                 </div>
