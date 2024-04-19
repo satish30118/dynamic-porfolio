@@ -28,7 +28,7 @@ const Experiences = () => {
             }
             setAnimation(true);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/timeline/add-experience`, {
+            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/timeline/add-experience`, {
                 startDate,
                 endDate,
                 jobPosition,
@@ -76,7 +76,7 @@ const Experiences = () => {
     const updateExperience = async (e) => {
         e.preventDefault();
         try {
-            const { startDate, endDate, jobPosition, companyName, description, link } = data;
+            const { startDate, endDate, jobPosition, companyName, description, link } = formdata;
             if (!startDate || !endDate || !jobPosition || !companyName || !description) {
                 toast.warn('Enter All Required data');
                 return;
@@ -144,7 +144,6 @@ const Experiences = () => {
                                 onClick={() => {
                                     setSelectedId(e._id);
                                     setActive(e);
-                                    console.log(active);
                                 }}
                                 style={{ background: `${selectedId == e._id ? 'rgb(9, 9, 31)' : ''}` }}
                             >
@@ -162,8 +161,8 @@ const Experiences = () => {
                                 <span style={{ color: 'gold' }}>{active.companyName}</span>
                             </div>
                             <p className="job-description">{active.description}</p>
-                            <a href={active.link} target="_blank">
-                                {active.link ? 'Seee Work' : ''}
+                            <a href={active.link} target="_blank" style={{ color: 'blue' }}>
+                                {active.link ? 'See my Work' : '.'}
                             </a>
                             <div className="manage-btn">
                                 <button
