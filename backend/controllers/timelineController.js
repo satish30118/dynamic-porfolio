@@ -37,6 +37,7 @@ const getAllEducationData = async (req, res) => {
   try {
     const allEducation = await educationModel.find({});
     res.status(200).send({
+      success: true,
       message: "All Education details",
       allEducation,
     });
@@ -63,6 +64,7 @@ const updateEducationData = async (req, res) => {
 
     if (updatedEducationData) {
       res.status(200).send({
+        success: true,
         message: " Updated Successfully",
         updatedEducationData,
       });
@@ -84,6 +86,7 @@ const deleteEducation = async (req, res) => {
       _id: id,
     });
     res.status(200).send({
+      success: true,
       message: "Deleted Successfully!!",
       educationDeleted,
     });
@@ -131,8 +134,11 @@ const addNewExperience = async (req, res) => {
 /* GET ALL Experiences DETAILS */
 const getAllExperienceData = async (req, res) => {
   try {
-    const allExperience = await experienceModel.find({}).sort({createdAt:-1});
+    const allExperience = await experienceModel
+      .find({})
+      .sort({ createdAt: -1 });
     res.status(200).send({
+      success: true,
       message: "All Experiences details",
       allExperience,
     });
@@ -159,6 +165,7 @@ const updateExperienceData = async (req, res) => {
 
     if (updatedExperienceData) {
       res.status(200).send({
+        success: true,
         message: " updated Successfully",
         updatedExperienceData,
       });
@@ -180,6 +187,7 @@ const deleteExperience = async (req, res) => {
       _id: id,
     });
     res.status(200).send({
+      success: true,
       message: "Deleted Successfully!!",
       experienceDeleted,
     });

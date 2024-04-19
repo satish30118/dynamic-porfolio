@@ -42,12 +42,7 @@ const Experiences = () => {
             if (data?.success) {
                 toast.success('Experience added Successfully!');
                 getAllExperience();
-                setData({startDate:"",
-                  endDate:"",
-                  jobPosition:"",
-                  companyName:"",
-                  description:"",
-                  link:"",});
+                setData({ startDate: '', endDate: '', jobPosition: '', companyName: '', description: '', link: '' });
                 setPopUp(false);
                 return;
             }
@@ -101,12 +96,7 @@ const Experiences = () => {
 
             if (data?.success) {
                 toast.success('Service Updated Successfully!');
-                setData({startDate:"",
-                  endDate:"",
-                  jobPosition:"",
-                  companyName:"",
-                  description:"",
-                  link:"",});
+                setData({ startDate: '', endDate: '', jobPosition: '', companyName: '', description: '', link: '' });
                 getAllExperience();
                 setPopUp(false);
                 return;
@@ -156,6 +146,7 @@ const Experiences = () => {
                                     setActive(e);
                                     console.log(active);
                                 }}
+                                style={{ background: `${selectedId == e._id ? 'rgb(9, 9, 31)' : ''}` }}
                             >
                                 {e.startDate} - {e.endDate}
                             </div>
@@ -180,7 +171,7 @@ const Experiences = () => {
                                     onClick={() => {
                                         setPopUp(true);
                                         setUpdateForm(true);
-                                        setData({ ...formdata, active });
+                                        setData(active);
                                     }}
                                 >
                                     Update
@@ -207,7 +198,7 @@ const Experiences = () => {
                     <div>
                         {/* <label htmlFor="title">Enter Skill Name</label> */}
                         <input
-                            type="text"
+                            type="number"
                             name="startDate"
                             required
                             placeholder="Enter Starting Year"
