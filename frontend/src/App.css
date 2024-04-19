@@ -35,6 +35,7 @@
 
 .header {
     height: 80px;
+    width: 100%;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -431,37 +432,44 @@
 
     .hero-section {
         flex-direction: column-reverse;
+        margin: 20px;
+        text-align: center;
     }
 
     .about-section {
         flex-direction: column-reverse;
         width: 100%;
-        margin: 70px 0px;
+        margin: 70px 10px;
         padding: 20px 10px;
         align-items: center;
         justify-content: center;
 
     }
 
-    .about-section-left {
+    .about-section-left img {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 40px;
     }
 
-    .about-section-right {
+    .about-section-right{
         width: 100%;
 
     }
 
     .skill-section {
-        margin: 0;
+        margin: 20px;
         padding: 20px 0;
     }
 
     .project-section {
-        margin: 20px 0px;
+        margin: 20px;
         padding: 20px 0;
 
+    }
+
+    .experience-section {
+        margin: 20px;
+        padding: 20px 0;
     }
 
     .experience-section-left {
@@ -481,7 +489,8 @@
     }
 
     .contact-section {
-        margin: 0;
+        margin: 20px;
+        padding:20px  0;
         flex-direction: column;
     }
 
@@ -495,12 +504,15 @@
     }
 
     .testimonial-section {
-        margin: 20px 0;
-        padding: 10px;
+        margin: 20px;
+        padding: 30px 10px;
     }
 }
 
 @media screen and (max-width :800px) {
+    .home-page{
+        padding:0;
+    }
     .side-drawer {
         display: block;
     }
@@ -510,7 +522,13 @@
         padding: 5px;
         margin: 4px;
     }
+
     .header {
         height: 70px;
+        /* border-bottom: 3px solid rgb(253, 252, 252); */
+    }
+    .hero-section-right img{
+        width:250px;
+        height: 250px;
     }
 }

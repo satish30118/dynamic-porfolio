@@ -15,7 +15,7 @@ const router = express.Router();
 
 //ROUTING FOR EXPERINCES FORM
 router.post('/add-experience', adminVerification, addNewExperience);
-router.delete('/delete-experience', adminVerification, deleteExperience);
+router.delete('/delete-experience/:id', adminVerification, deleteExperience);
 router.get('/get-all-experience', getAllExperienceData);
 router.put('/update-experience/:id', adminVerification, updateExperienceData);
 

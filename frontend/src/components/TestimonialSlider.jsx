@@ -27,7 +27,7 @@ const TestimonialSlider = ({ testimonials, intervalTime }) => {
                         </div>
                     </div>
 
-                    <p>{testimonial.message}</p>
+                    <p>"{testimonial.message}"</p>
                 </div>
             ))}
         </div>
