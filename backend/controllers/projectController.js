@@ -4,7 +4,10 @@ const projectModel = require("../models/projectModel");
 const addNewProject = async (req, res) => {
   try {
     const { heading, title, techStack, description, link } = req.body;
-    const image = req.file.path;
+    let image;
+    if (req.file.path) {
+      image = req.file.path;
+    }
     //CREATING NEW PROJECT
     const newProject = await new projectModel({
       heading,

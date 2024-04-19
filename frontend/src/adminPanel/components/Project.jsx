@@ -10,6 +10,7 @@ const Project = () => {
     const [allProject, setAllProject] = useState([]);
     const [active, setActive] = useState({});
     const [formdata, setData] = useState({});
+    const [image, setImage] = useState('');
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -20,7 +21,7 @@ const Project = () => {
     const addProject = async (e) => {
         e.preventDefault();
         try {
-            const { heading, title, techStack, description, link, image } = formdata;
+            const { heading, title, techStack, description, link } = formdata;
             if (!heading || !title || !techStack || !description) {
                 toast.warn('Enter All Required data');
                 return;
@@ -35,14 +36,15 @@ const Project = () => {
 
             setAnimation(true);
 
-            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/project/add-project`, projectData);
+            const { data } = await axios.post(`http://localhost:8000/api/v1/project/add-project`, projectData);
 
             setAnimation(false);
 
             if (data?.success) {
                 toast.success('Project added Successfully!');
-                getAllExperience();
-                setData({ heading: '', title: '', techStack: '', image: '', description: '', link: '' });
+                getAllProject();
+                setData({ heading: '', title: '', techStack: '', description: '', link: '' });
+                setImage('');
                 setPopUp(false);
                 return;
             }
@@ -57,7 +59,7 @@ const Project = () => {
     const deleteProject = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/project/delete-project/${selectedId}`);
+            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/project/delete-project/${active._id}`);
 
             if (data?.success) {
                 toast.success(data?.message);
@@ -76,7 +78,7 @@ const Project = () => {
     const updateProject = async (e) => {
         e.preventDefault();
         try {
-            const { heading, title, techStack, description, link, image } = formdata;
+            const { heading, title, techStack, description, link } = formdata;
             if (!heading || !title || !techStack || !description) {
                 toast.warn('Enter All Required data');
                 return;
@@ -91,13 +93,14 @@ const Project = () => {
 
             setAnimation(true);
 
-            const { data } = await axios.put(`https://satish-portfolio.onrender.com/api/v1/project/update-project/${selectedId}`, projectData);
+            const { data } = await axios.put(`https://satish-portfolio.onrender.com/api/v1/project/update-project/${active._id}`, projectData);
 
             setAnimation(false);
 
             if (data?.success) {
                 toast.success('Project Updated Successfully!');
-                setData({ heading: '', title: '', techStack: '', image: '', description: '', link: '' });
+                setData({ heading: '', title: '', techStack: '', description: '', link: '' });
+                setImage('');
                 setPopUp(false);
                 return;
             }
@@ -113,7 +116,7 @@ const Project = () => {
         try {
             const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/project/get-all-project`);
             setAllProject(data?.allProject);
-            setActive(data?.allExperience[0]);
+            setActive(data?.allProject[0]);
         } catch (error) {
             console.log(error);
         }
@@ -143,7 +146,6 @@ const Project = () => {
                             <div
                                 key={e._id}
                                 onClick={() => {
-                                    setSelectedId(e._id);
                                     setActive(e);
                                 }}
                                 style={{ background: `${active._id == e._id ? 'rgb(9, 9, 31)' : ''}` }}
@@ -187,7 +189,7 @@ const Project = () => {
                             </div>
                         </div>
                         <div>
-                          <img className='projectImage' src={`https://satish-portfolio.onrender.com/${active.image}`} alt="Project Image" />
+                            <img className="projectImage" src={`https://satish-portfolio.onrender.com/${active.image}`} alt="Project Image" />
                         </div>
                     </div>
                 </div>
@@ -199,7 +201,6 @@ const Project = () => {
                 <form className="login-form" style={{ height: 'auto', margin: '10px auto', width: '500px' }}>
                     <h5 className="heading">{updateForm ? 'Update Data' : 'Add Experience'}</h5>
                     <div>
-                       
                         <input
                             type="text"
                             name="heading"
