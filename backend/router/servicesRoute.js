@@ -17,7 +17,7 @@ const upload = multer({ storage });
 
 //ROUTING
 router.post('/add-service', adminVerification, upload.single('image'), addNewService);
-router.delete('/delete-service', adminVerification, deleteService);
+router.delete('/delete-service/:id', adminVerification, deleteService);
 router.get('/get-all-service', getAllServiceData);
 router.put('/update-service/:id', adminVerification, upload.single('image'), updateServiceData);
 

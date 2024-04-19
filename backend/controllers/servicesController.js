@@ -33,6 +33,7 @@ const getAllServiceData = async (req, res) => {
     try {
         const allService = await servicesModel.find({});
         res.status(200).send({
+            success:true,
             message: 'All Skill details',
             allService,
         });
@@ -58,6 +59,7 @@ const updateServiceData = async (req, res) => {
 
         if (updatedServiceData) {
             res.status(200).send({
+                success:true,
                 message: ' Updated Successfully',
                 updatedServiceData,
             });
@@ -77,6 +79,7 @@ const deleteService = async (req, res) => {
         const { id } = req.params;
         const serviceDeleted = await servicesModel.findByIdAndDelete({ _id: id });
         res.status(200).send({
+            success:true,
             message: 'Deleted Successfully!!',
             serviceDeleted,
         });

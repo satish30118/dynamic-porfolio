@@ -24,7 +24,7 @@ const Services = () => {
             serviceData.append('title', title);
             serviceData.append('image', image);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/service/add-service`, serviceData);
+            const { data } = await axios.post(`http://localhost:8000/api/v1/services/add-service`, serviceData);
 
             setAnimation(false);
 
@@ -47,7 +47,7 @@ const Services = () => {
     const deleteService = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`http://localhost:8000/api/v1/skill/delete-skill/${selectedId}`);
+            const { data } = await axios.delete(`http://localhost:8000/api/v1/services/delete-service/${selectedId}`);
 
             if (data?.success) {
                 toast.success(data?.message);
@@ -66,7 +66,7 @@ const Services = () => {
     const updateService = async (e) => {
         e.preventDefault();
         try {
-            if (!title || !image) {
+            if (!title) {
                 toast.warn("Title and image can't be empty");
                 return;
             }
@@ -75,7 +75,7 @@ const Services = () => {
             updatedServiceData.append('title', title);
             updatedServiceData.append('image', image);
 
-            const { data } = await axios.put(`http://localhost:8000/api/v1/service/update-service/${selectedId}`, updatedServiceData);
+            const { data } = await axios.put(`http://localhost:8000/api/v1/services/update-service/${selectedId}`, updatedServiceData);
 
             setAnimation(false);
 
@@ -97,7 +97,7 @@ const Services = () => {
 
     const getAllService = async () => {
         try {
-            const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/service/get-all-service`);
+            const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/services/get-all-service`);
             setAllService(data?.allService);
         } catch (error) {
             console.log(error);
