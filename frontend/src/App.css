@@ -174,7 +174,7 @@
     margin: 10px 5px;
     border-radius: 10px;
     /* background-color: rgb(5, 10, 6); */
-    background-color: rgb(12, 40, 40);
+    background-color:rgb(1, 40, 55);
     transition: all 0.6s;
     border: 1px solid gold;
 }
@@ -273,6 +273,7 @@
     width: 30%;
     border-left: 2px solid rgb(177, 175, 175);
     max-width: 250px;
+    font-family: 'poppins';
 }
 
 .experience-section-left div {
@@ -290,6 +291,7 @@
 .experience-section-right {
     width: 68%;
     text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     .job-position {
         font-size: 30px;

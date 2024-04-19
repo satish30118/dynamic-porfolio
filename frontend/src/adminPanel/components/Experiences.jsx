@@ -7,8 +7,7 @@ const Experiences = () => {
     const [animation, setAnimation] = useState(false);
     const [deletePopUp, setDeletePopUp] = useState(false);
     const [updateForm, setUpdateForm] = useState(false);
-    const [selectedId, setSelectedId] = useState('');
-    const [allExperience, setAllExperience] = useState([]);
+    const [allEducation, setAllEducation] = useState([]);
     const [active, setActive] = useState({});
     const [formdata, setData] = useState({});
 
@@ -113,6 +112,7 @@ const Experiences = () => {
         try {
             const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/timeline/get-all-experience`);
             setAllExperience(data?.allExperience);
+            setActive(data?.allExperience[0])
         } catch (error) {
             console.log(error);
         }
@@ -145,7 +145,7 @@ const Experiences = () => {
                                     setSelectedId(e._id);
                                     setActive(e);
                                 }}
-                                style={{ background: `${selectedId == e._id ? 'rgb(9, 9, 31)' : ''}` }}
+                                style={{ background: `${active._id== e._id ? 'rgb(9, 9, 31)' : ''}` }}
                             >
                                 {e.startDate} - {e.endDate}
                             </div>
@@ -153,7 +153,7 @@ const Experiences = () => {
                     </div>
 
                     <div className="experience-section-right">
-                        <div style={{ display: `${selectedId ? 'block' : 'none'}` }}>
+                        <div style={{ display: `${active? 'block' : 'none'}` }}>
                             <div className="job-position">
                                 <span style={{ color: '#CC5500' }}>{active.jobPosition}</span>
                             </div>
