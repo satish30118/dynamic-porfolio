@@ -3,7 +3,8 @@ const servicesModel = require('../models/sevicesModel');
 /* ------------- SERVICES SECTION ------------- */
 const addNewService = async (req, res) => {
     try {
-        const { title, image } = req.body;
+        const { title } = req.body;
+        const image = req.file.path;
 
         //CREATING NEW PROJECT
         const newService = await new servicesModel({
@@ -47,7 +48,11 @@ const getAllServiceData = async (req, res) => {
 /* Service Update */
 const updateServiceData = async (req, res) => {
     try {
-        const { title, image } = req.body;
+        const { title } = req.body;
+        let image;
+        if (req.file) {
+            image = req.file.path;
+        }
         const { id } = req.params;
         const updatedServiceData = await servicesModel.findByIdAndUpdate(id, { title, image }, { new: true });
 
