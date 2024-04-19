@@ -26,7 +26,7 @@ const Aboutme = () => {
             userData.append('bio', user.bio);
             userData.append('image', image);
 
-            const { data } = await axios.put(`http://localhost:8000/api/v1/auth/update-user/${auth?.user?._id}`, userData);
+            const { data } = await axios.put(`https://satish-portfolio.onrender.com/api/v1/auth/update-user/${auth?.user?._id}`, userData);
 
             setAnimation(false);
 
@@ -47,7 +47,7 @@ const Aboutme = () => {
 
     const getProfileData = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8000/api/v1/auth/get-all-user`);
+            const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/auth/get-all-user`);
             setUser(data?.allUser[0]);
             console.log(user);
         } catch (error) {

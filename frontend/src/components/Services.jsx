@@ -23,7 +23,7 @@ function Services() {
                 {allService.map((s) => (
                     <div key={s._id} className="skill-card">
                         <div className="card-img">
-                            <img src={`http://localhost:8000/${s.image}`} alt="Services Logo" />
+                            <img src={`https://satish-portfolio.onrender.com/${s.image}`} alt="Services Logo" />
                         </div>
                         <div className="card-details" style={{ paddingTop: '10px' }}>
                             <p style={{ color: 'gold' }}>{s?.title}</p>

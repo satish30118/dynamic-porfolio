@@ -26,7 +26,7 @@ const Skill = () => {
             skillData.append('level', level);
             skillData.append('image', image);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/skill/add-skill`, skillData);
+            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/skill/add-skill`, skillData);
 
             setAnimation(false);
 
@@ -50,7 +50,7 @@ const Skill = () => {
     const deleteSkill = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`http://localhost:8000/api/v1/skill/delete-skill/${selectedId}`);
+            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/skill/delete-skill/${selectedId}`);
 
             if (data?.success) {
                 toast.success(data?.message);
@@ -79,7 +79,7 @@ const Skill = () => {
             updatedskillData.append('level', level);
             updatedskillData.append('image', image);
 
-            const { data } = await axios.put(`http://localhost:8000/api/v1/skill/update-skill/${selectedId}`, updatedskillData);
+            const { data } = await axios.put(`https://satish-portfolio.onrender.com/api/v1/skill/update-skill/${selectedId}`, updatedskillData);
 
             setAnimation(false);
 
@@ -124,7 +124,7 @@ const Skill = () => {
                     {allSkill.map((s) => (
                         <div className="skill-card" key={s._id} style={{ height: '330px', color: 'lightgray' }}>
                             <div className="card-img">
-                                <img src={`http://localhost:8000/${s.image}`} alt="" />
+                                <img src={`https://satish-portfolio.onrender.com/${s.image}`} alt="" />
                             </div>
                             <div className="card-details">
                                 <p style={{ color: '#CC5500' }}>{s.title}</p>

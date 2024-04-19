@@ -23,7 +23,7 @@ const Login = () => {
             }
             setAnimation(true);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/auth/login`, { email, password });
+            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/auth/login`, { email, password });
 
             setAnimation(false);
 

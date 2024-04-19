@@ -28,7 +28,7 @@ const Testimonial = () => {
             TestiData.append('message', message);
             TestiData.append('image', image);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/testimonial/add-testimonial`, TestiData);
+            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/testimonial/add-testimonial`, TestiData);
 
             setAnimation(false);
 
@@ -53,7 +53,7 @@ const Testimonial = () => {
     const deleteTesti = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`http://localhost:8000/api/v1/testimonial/delete-testimonial/${selectedId}`);
+            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/testimonial/delete-testimonial/${selectedId}`);
 
             if (data?.success) {
                 toast.success(data?.message);

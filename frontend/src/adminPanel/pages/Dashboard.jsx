@@ -4,14 +4,14 @@ import { ToastContainer } from 'react-toastify';
 import { useAuth } from '../../contextAPI/authContext';
 
 const Dashboard = () => {
-    const [auth,] =useAuth();
+    const [auth,] = useAuth();
     return (
         <div className="dashboard-page">
             <div className="dashboard-menu">
                 <h2 className='heading'>Admin</h2>
                 <div>
                     <img
-                        src={`http://localhost:8000/${auth?.user?.image}`}
+                        src={`https://satish-portfolio.onrender.com/${auth?.user?.image}`}
                         alt=""
                     />
                 </div>

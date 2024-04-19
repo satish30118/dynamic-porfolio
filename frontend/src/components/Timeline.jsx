@@ -5,7 +5,7 @@ function Timeline() {
     return (
         <div className="experience-section" id='experience'>
             <div className="heading">EXPERIENCE</div>
-            <div style={{display:"flex", justifyContent:"space-between"}}>
+            <div className='experience'>
                 <div className="experience-section-left">
                     <div>2023 - Present</div>
                     <div>2022 - 2023</div>

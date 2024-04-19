@@ -4,7 +4,7 @@ function Projects() {
     return (
         <div className="project-section" id="project">
             <h1 className="heading">MY PROJECT</h1>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:"center" }}>
+            <div className='experience'>
                 <div className="experience-section-left">
                     <div>Inventory Management</div>
                     <div>Chat Application</div>

@@ -17,7 +17,7 @@ const TestimonialSlider = ({ testimonials, intervalTime }) => {
                 <div key={index} className={index === currentSlide ? 'slide active' : 'slide'}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <img
-                            src={`http://localhost:8000/${testimonial?.image}`}
+                            src={`https://satish-portfolio.onrender.com/${testimonial?.image}`}
                             alt="member image"
                             style={{ width: '100px', height: '100px', borderRadius: '50%' }}
                         />
@@ -27,7 +27,7 @@ const TestimonialSlider = ({ testimonials, intervalTime }) => {
                         </div>
                     </div>
 
-                    <p>{testimonial.text}</p>
+                    <p>{testimonial.message}</p>
                 </div>
             ))}
         </div>

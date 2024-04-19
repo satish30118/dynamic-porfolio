@@ -23,7 +23,7 @@ function Skills() {
                     <div key={s?._id} className="skill-card">
                         <div className="card-img">
                             <img
-                               src={`http://localhost:8000/${s?.image}`}
+                               src={`https://satish-portfolio.onrender.com/${s?.image}`}
                                alt="Skill Logo"
                             />
                         </div>

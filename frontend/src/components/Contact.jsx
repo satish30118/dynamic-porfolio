@@ -17,7 +17,7 @@ function Contact() {
             }
             setAnimation(true);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/contact/add-contact-form`, { name, email, message });
+            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/contact/add-contact-form`, { name, email, message });
 
             setAnimation(false);
 

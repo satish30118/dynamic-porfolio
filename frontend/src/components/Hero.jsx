@@ -5,7 +5,7 @@ function Hero() {
     const [user, setUser] = useState({});
     const getProfileData = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8000/api/v1/auth/get-all-user`);
+            const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/auth/get-all-user`);
             setUser(data?.allUser[0]);
             console.log(user);
         } catch (error) {
@@ -43,7 +43,7 @@ function Hero() {
             </div>
             <div className="hero-section-right">
                 <img
-                    src={`http://localhost:8000/${user?.image}`}
+                    src={`https://satish-portfolio.onrender.com/${user?.image}`}
                     alt="user profile"
                 />
             </div>

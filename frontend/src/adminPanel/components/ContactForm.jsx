@@ -10,7 +10,7 @@ const ContactForm = () => {
     const deleteFormData = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`http://localhost:8000/api/v1/contact/delete-contact-form${selectedId}`);
+            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/contact/delete-contact-form${selectedId}`);
 
             if (data?.success) {
                 toast.success(data?.message);

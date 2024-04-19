@@ -13,7 +13,7 @@ const PrivateRoute = () => {
     const [auth, setAuth] = useAuth();
 
     const authCheck = async () => {
-        const { data } = await axios.get(`http://localhost:8000/api/v1/auth/admin-auth`);
+        const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/auth/admin-auth`);
 
         if (data?.success) {
             setStatus(true);

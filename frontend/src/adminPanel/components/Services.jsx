@@ -24,7 +24,7 @@ const Services = () => {
             serviceData.append('title', title);
             serviceData.append('image', image);
 
-            const { data } = await axios.post(`http://localhost:8000/api/v1/services/add-service`, serviceData);
+            const { data } = await axios.post(`https://satish-portfolio.onrender.com/api/v1/services/add-service`, serviceData);
 
             setAnimation(false);
 
@@ -47,7 +47,7 @@ const Services = () => {
     const deleteService = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`http://localhost:8000/api/v1/services/delete-service/${selectedId}`);
+            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/services/delete-service/${selectedId}`);
 
             if (data?.success) {
                 toast.success(data?.message);
@@ -75,7 +75,7 @@ const Services = () => {
             updatedServiceData.append('title', title);
             updatedServiceData.append('image', image);
 
-            const { data } = await axios.put(`http://localhost:8000/api/v1/services/update-service/${selectedId}`, updatedServiceData);
+            const { data } = await axios.put(`https://satish-portfolio.onrender.com/api/v1/services/update-service/${selectedId}`, updatedServiceData);
 
             setAnimation(false);
 
@@ -125,7 +125,7 @@ const Services = () => {
                     {allService.map((s) => (
                         <div className="skill-card" key={s._id} style={{ height: '330px', color: 'lightgray' }}>
                             <div className="card-img">
-                                <img src={`http://localhost:8000/${s.image}`} alt="" />
+                                <img src={`https://satish-portfolio.onrender.com/${s.image}`} alt="" />
                             </div>
                             <div className="card-details">
                                 <p style={{ color: '#CC5500' }}>{s.title}</p>
