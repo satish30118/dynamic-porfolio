@@ -107,9 +107,10 @@ function Contact() {
                         </div>
                     </form>
                 </div>
-                <div style={{ position: 'absolute', bottom: '10px', left: '-50px' }}>
+                <br />
+                <div style={{ position: 'absolute', bottom: '10px', right: '-10px' }}>
                     <Link to="/admin/login">
-                        <button className="btn">Admin Login</button>
+                        <button className='btn' style={{padding:"4px 8px"}}>Admin Login</button>
                     </Link>
                 </div>
             </div>

@@ -327,7 +327,7 @@
     justify-content: space-between;
     margin: 0px 40px;
     padding: 20px;
-    padding-bottom: 35px;
+    padding-bottom: 65px;
     border-top: 1px solid lightgray;
     position: relative;
 }
@@ -355,6 +355,7 @@
     width: 50%;
     /* border: 2px solid red; */
     text-align: center;
+    padding-bottom: 50px;
 
 }
 
