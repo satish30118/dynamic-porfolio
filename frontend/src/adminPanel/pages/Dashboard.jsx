@@ -29,7 +29,7 @@ const Dashboard = () => {
             <div className="dashboard-content">
                 <Outlet />
             </div>
-            <ToastContainer position="top-center" autoClose={500} theme="colored" />
+            <ToastContainer position="top-center" autoClose={200} theme="colored" />
             {/* Same as */}
             <ToastContainer />
         </div>

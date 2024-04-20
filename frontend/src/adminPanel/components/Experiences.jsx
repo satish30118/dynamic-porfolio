@@ -56,7 +56,7 @@ const Experiences = () => {
     const deleteExperience = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/timeline/delete-experience/${selectedId}`);
+            const { data } = await axios.delete(`https://satish-portfolio.onrender.com/api/v1/timeline/delete-experience/${active._id}`);
 
             if (data?.success) {
                 toast.success(data?.message);
@@ -82,7 +82,7 @@ const Experiences = () => {
             }
             setAnimation(true);
 
-            const { data } = await axios.put(`https://satish-portfolio.onrender.com/api/v1/timeline/update-experience/${selectedId}`, {
+            const { data } = await axios.put(`https://satish-portfolio.onrender.com/api/v1/timeline/update-experience/${active._id}`, {
                 startDate,
                 endDate,
                 jobPosition,
@@ -112,7 +112,7 @@ const Experiences = () => {
         try {
             const { data } = await axios.get(`https://satish-portfolio.onrender.com/api/v1/timeline/get-all-experience`);
             setAllExperience(data?.allExperience);
-            setActive(data?.allExperience[0])
+            setActive(data?.allExperience[0]);
         } catch (error) {
             console.log(error);
         }
@@ -142,10 +142,9 @@ const Experiences = () => {
                             <div
                                 key={e._id}
                                 onClick={() => {
-                                    setSelectedId(e._id);
                                     setActive(e);
                                 }}
-                                style={{ background: `${active._id== e._id ? 'rgb(9, 9, 31)' : ''}` }}
+                                style={{ background: `${active._id == e._id ? 'rgb(9, 9, 31)' : ''}` }}
                             >
                                 {e.startDate} - {e.endDate}
                             </div>
@@ -153,7 +152,7 @@ const Experiences = () => {
                     </div>
 
                     <div className="experience-section-right">
-                        <div style={{ display: `${active? 'block' : 'none'}` }}>
+                        <div style={{ display: `${active ? 'block' : 'none'}` }}>
                             <div className="job-position">
                                 <span style={{ color: '#CC5500' }}>{active.jobPosition}</span>
                             </div>
