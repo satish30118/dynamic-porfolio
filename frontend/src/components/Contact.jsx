@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function Contact() {
     const [name, setName] = useState('');
@@ -105,6 +106,11 @@ function Contact() {
                             </button>
                         </div>
                     </form>
+                </div>
+                <div style={{ position: 'absolute', bottom: '10px', left: '-50px' }}>
+                    <Link to="/admin/login">
+                        <button className="btn">Admin Login</button>
+                    </Link>
                 </div>
             </div>
             <ToastContainer position="bottom-center" autoClose={500} theme="colored" />

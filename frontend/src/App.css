@@ -24,7 +24,9 @@
 }
 
 .home-page {
-    background-color: #1c2a1c;
+    /* background-color: #1c2a1c; */
+    /* background-color: rgb(1, 40, 55); */
+    background-color: rgb(12, 40, 40);
     color: white;
     margin: 0;
     padding: 0 40px;
@@ -41,7 +43,8 @@
     align-items: center;
     justify-content: end;
     position: sticky;
-    background: #1c2a1c;
+    /* background: #1c2a1c; */
+    background-color: rgb(12, 40, 40);
     top: 0;
     z-index: 300000;
 }
@@ -211,7 +214,7 @@
 .experience {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .project-cards {
@@ -326,6 +329,7 @@
     padding: 20px;
     padding-bottom: 35px;
     border-top: 1px solid lightgray;
+    position: relative;
 }
 
 .contact-section-left {

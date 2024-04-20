@@ -48,7 +48,7 @@ const Education = () => {
                             </div>
                             <p className="job-description">{active.description}</p>
                             <a href={active.link} target="_blank" style={{ color: 'blue' }}>
-                                {active.link ? 'See my college' : '.'}
+                                {active.link ? 'See my college' : <span></span>}
                             </a>
                         </div>
                     </div>
