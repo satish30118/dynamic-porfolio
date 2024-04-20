@@ -8,6 +8,7 @@ const {
     getAllEducationData,
     addNewEducation,
     updateEducationData,
+    deleteEducation,
 } = require('../controllers/timelineController');
 
 //ROUTER OBJECT
@@ -23,6 +24,6 @@ router.put('/update-experience/:id', adminVerification, updateExperienceData);
 router.post('/add-education', adminVerification, addNewEducation);
 router.get('/get-all-education', getAllEducationData);
 router.put('/update-education/:id', adminVerification, updateEducationData);
-router.delete('/delete-education/:id', adminVerification, deleteExperience);
+router.delete('/delete-education/:id', adminVerification, deleteEducation);
 
 module.exports = router;

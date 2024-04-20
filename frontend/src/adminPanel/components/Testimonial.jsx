@@ -127,7 +127,7 @@ const Testimonial = () => {
                 </div>
                 <div className="skill-cards">
                     {allTestimonial.map((s) => (
-                        <div className="skill-card" key={s._id} style={{ height: 'auto', color: 'lightgray' }}>
+                        <div className="skill-card" key={s._id} style={{ height: 'auto', color: 'lightgray', }}>
                             <div className="card-img">
                                 <img src={`http://localhost:8000/${s.image}`} alt="" />
                             </div>

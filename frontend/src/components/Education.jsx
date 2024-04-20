@@ -50,26 +50,6 @@ const Education = () => {
                             <a href={active.link} target="_blank" style={{ color: 'blue' }}>
                                 {active.link ? 'See my college' : '.'}
                             </a>
-                            <div className="manage-btn">
-                                <button
-                                    className="btn update-btn"
-                                    onClick={() => {
-                                        setPopUp(true);
-                                        setUpdateForm(true);
-                                        setData(active);
-                                    }}
-                                >
-                                    Update
-                                </button>
-                                <button
-                                    className="btn delete-btn"
-                                    onClick={() => {
-                                        setDeletePopUp(true);
-                                    }}
-                                >
-                                    Delete
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>

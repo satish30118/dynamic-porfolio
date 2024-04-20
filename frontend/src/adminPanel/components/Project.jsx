@@ -189,7 +189,7 @@ const Project = () => {
                             </div>
                         </div>
                         <div>
-                            <img className="projectImage" src={`https://satish-portfolio.onrender.com/${active.image}`} alt="Project Image" />
+                            <img className="project-image" src={`https://satish-portfolio.onrender.com/${active.image}`} alt="Project Image" />
                         </div>
                     </div>
                 </div>
