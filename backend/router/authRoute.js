@@ -19,7 +19,7 @@ const upload = multer({ storage });
 //ROUTING
 router.post('/register', registerController);
 router.post('/login', loginController);
-router.get('/get-all-user', adminVerification, getAllUser);
+router.get('/get-all-user', getAllUser);
 router.put('/update-user/:id', adminVerification, upload.single('image'), updateUser);
 
 //PROTECTED ROUTE FOR USER

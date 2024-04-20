@@ -12,7 +12,7 @@ router.get('/get-all-contact-form', adminVerification, getAllFormData);
 
 //ROUTING FOR CONTACT LINK
 router.post('/add-contact-links', adminVerification, addContactLink);
-router.get('/get-all-contact-links', adminVerification, getAllContactLinkData);
+router.get('/get-all-contact-links', getAllContactLinkData);
 router.put('/update-contact-links/:id', adminVerification, updateContactLinkData);
 
 module.exports = router;
