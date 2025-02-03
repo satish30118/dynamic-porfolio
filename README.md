@@ -82,5 +82,5 @@ cd dynamic-porfolio
 - **Contact Form**: `/api/contact`
 
 ## Deployment
-[Live test](https://satish-portfolio-six.vercel.app/).
+[Live test][(https://satish-portfolio-six.vercel.app/)].
 
